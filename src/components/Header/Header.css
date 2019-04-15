@@ -1,0 +1,53 @@
+header{
+  background-color: #0197f6;
+  margin-bottom: 50px; 
+}
+
+.header-navigation{
+  display: inline-block; 
+}
+
+.login-link, .register-link, .logout-link{
+  color: white; 
+  text-decoration: none; 
+  margin-left: 20px; 
+  font-weight: 800;
+  height: 100px;
+  font-size: 18px;  
+}
+
+.login-link:hover, .register-link:hover, .logout-link:hover{
+  border-bottom: 2px solid white;
+}
+
+.header-container{ 
+  max-width: 1000px; 
+  margin: 0 auto;
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+}
+
+
+.header-title-link{
+  color: white; 
+  text-decoration: none; 
+  font-weight: 900;
+  font-size: 34px; 
+  text-align: left; 
+}
+
+.header-title{
+  display: inline-block; 
+}
+
+@media only screen and (max-width: 760px){
+  .header-title-link{
+    display: block; 
+  }
+  
+  .header-navigation{
+    display: block;  
+  }
+
+}

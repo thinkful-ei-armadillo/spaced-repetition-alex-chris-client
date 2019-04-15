@@ -18,7 +18,7 @@ class Header extends Component {
           {this.context.user.name}
         </span>
         <nav className="header-navigation">
-          <Link
+          <Link className="logout-link"
             onClick={this.handleLogoutClick}
             to='/login'>
             Logout
@@ -31,9 +31,9 @@ class Header extends Component {
   renderLoginLink() {
     return (
       <nav className="header-navigation">
-        <Link to='/login'>Login</Link>
+        <Link className="login-link" to='/login'>Login</Link>
         {' '}
-        <Link to='/register'>Sign up</Link>
+        <Link className="register-link" to='/register'>Sign up</Link>
       </nav>
     )
   }
@@ -41,9 +41,9 @@ class Header extends Component {
   render() {
     return (
       <header>
-        <div className="registration-title-container" >
-          <h1 className="registration-header">
-            <Link className="registration-title" to='/'>
+        <div className="header-container" >
+          <h1 className="header-title">
+            <Link className="header-title-link" to='/'>
               Spaced repetition
             </Link>
           </h1>

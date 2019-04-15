@@ -133,28 +133,13 @@
   text-decoration: none; 
 }
 
-.registration-title-container{ 
-  max-width: 1000px; 
-  margin: 0 auto; 
-}
 
+@media only screen and (max-width: 760px){
+  .registration-form-top, .registration-form-bottom{
+    border: none;
+  }
 
-.registration-title{
-  color: white; 
-  text-decoration: none; 
-  font-weight: 900;
-  font-size: 48px; 
-  text-align: left; 
-}
-
-.registration-header-links{
-  text-align: right; 
-}
-
-header{
-  background-color: #0197f6;
-}
-
-.header-navigation{
-  display: inline-block; 
+  .registration-form-bottom{
+    border-radius: 0px; 
+  }
 }
