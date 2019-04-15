@@ -1,0 +1,13 @@
+.blue-button{
+  background-color: #0197f6;
+  border: none; 
+  border-bottom: 4px solid #1a53bb;
+  border-radius: 15px; 
+  color: white; 
+  text-transform: uppercase; 
+  outline: none; 
+  font-size: 12px; 
+  padding: 10px; 
+  font-weight: 800; 
+  font-family: 'Nunito', sans-serif; 
+}

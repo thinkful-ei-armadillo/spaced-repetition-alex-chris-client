@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import RegistrationForm from '../../components/RegistrationForm/RegistrationForm'
+import { Link } from 'react-router-dom'
 
 class RegistrationRoute extends Component {
   static defaultProps = {
@@ -15,14 +16,19 @@ class RegistrationRoute extends Component {
 
   render() {
     return (
-      <section>
-        <p>
-          Practice learning a language with the spaced reptition revision technique.
-        </p>
-        <h2>Sign up</h2>
-        <RegistrationForm
-          onRegistrationSuccess={this.handleRegistrationSuccess}
-        />
+      <section className="registration-form-container">
+        <div className="registration-form-top">
+          <h2 className="form-header">Sign up</h2>
+          <p className="form-subtitle">
+            Practice learning a language with the spaced reptition revision technique.
+          </p>
+          <RegistrationForm
+            onRegistrationSuccess={this.handleRegistrationSuccess}
+          />
+        </div>
+        <footer className="registration-form-bottom">
+          <Link to='/login'>Already have an account?</Link>
+        </footer>
       </section>
     );
   }
