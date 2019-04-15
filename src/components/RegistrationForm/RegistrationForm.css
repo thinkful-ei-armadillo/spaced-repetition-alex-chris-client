@@ -3,7 +3,7 @@
 }
 
 .registration-form-top{
-  padding: 10px 40px 30px; 
+  padding: 10px 30px 30px; 
   border-top-left-radius: 25px;
   border-top-right-radius: 25px; 
   border-bottom: none; 
@@ -14,6 +14,10 @@
   border-bottom-left-radius: 25px;
   border-bottom-right-radius: 25px; 
   border-top: none; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
 }
 
 .registration-form-container{
@@ -23,26 +27,56 @@
   
 }
 
+.registration-form-button{
+  margin-top: 30px;
+  width: 100%; 
+}
+
+.form-header, .form-subtitle {
+  padding: 0 10px;
+}
+
 .form-header{
   font-size: 40px; 
 }
 
 .form-subtitle{
   font-weight: 800;
-  color: #a1a1a1;
+  color: #7b7b7b;
   font-size: 16px; 
 }
 
-.registration-form-button{
-  width: 100%; 
-}
-
-.form-input-container{
+.registration-form-input-container{
   outline: none;
   position: relative;
-  padding: 10px;  
 }
 
-.form-input-container label{
-  left: 10px; 
+.registration-form-input-container label{
+  position: absolute;
+  cursor: pointer;
+  display: flex;
+  height: 100%;
+  align-items: center;
+  padding-left: 20px;
+  font-weight: 800;
+}
+
+.registration-form-input, .registration-form-input-last{
+  width: 100%;
+  height: 60px;
+  padding: 20px 0 20px 110px;
+  outline: none;
+  margin: -3px 0 0;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid #e5e5e5;
+}
+
+.registration-form-input-last {
+  border-bottom: none;
+}
+
+.registration-form-input:focus, .registration-form-input-last:focus{
+  border-radius: 5px;
+  border: 3px solid #0197f6;
 }
