@@ -27,7 +27,7 @@ class RegistrationRoute extends Component {
           />
         </div>
         <footer className="registration-form-bottom">
-          <Link to='/login'>Already have an account?</Link>
+          <p>Already have an account? <Link className="sign-in-link" to='/login'>Sign In</Link></p>
         </footer>
       </section>
     );
