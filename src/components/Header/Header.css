@@ -1,6 +1,7 @@
 header{
   background-color: #0197f6;
   margin-bottom: 50px; 
+  padding:10px;
 }
 
 .header-navigation{
@@ -38,11 +39,16 @@ header{
 }
 
 .header-title{
+  margin: 0;
   display: inline-block; 
 }
 
 @media only screen and (max-width: 760px){
-  .header-title-link{
+  .header-container{
+    display: block;
+  }
+
+  .header-title{
     display: block; 
   }
   

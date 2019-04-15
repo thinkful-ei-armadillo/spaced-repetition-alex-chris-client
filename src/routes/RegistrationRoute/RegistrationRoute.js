@@ -16,17 +16,17 @@ class RegistrationRoute extends Component {
 
   render() {
     return (
-      <section className="registration-form-container">
-        <div className="registration-form-top">
-          <h2 className="form-header">Sign up</h2>
-          <p className="form-subtitle">
+      <section className="user-form-container">
+        <div className="user-form-top">
+          <h2 className="user-form-header">Sign up</h2>
+          <p className="user-form-subtitle">
             Practice learning a language with the spaced reptition revision technique.
           </p>
           <RegistrationForm
             onRegistrationSuccess={this.handleRegistrationSuccess}
           />
         </div>
-        <footer className="registration-form-bottom">
+        <footer className="user-form-bottom">
           <p>Already have an account? <Link className="sign-in-link" to='/login'>Sign In</Link></p>
         </footer>
       </section>
