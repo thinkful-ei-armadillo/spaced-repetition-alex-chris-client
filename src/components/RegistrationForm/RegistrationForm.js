@@ -38,14 +38,15 @@ class RegistrationForm extends Component {
 
   render() {
     const { error } = this.state;
+    const usernameError = error && error.toLowerCase().includes('username');
+    const passwordError = error && error.toLowerCase().includes('password');
     return (
       <form className="registration-form"
         onSubmit={this.handleSubmit}
       >
-     
-        <div role='alert'>
-          {error && <p>{error}</p>}
-        </div>
+        {(error && !usernameError && !passwordError) && <div role='alert' className="main-form-error">
+          <p>{error}</p>
+        </div>}
         <div className="registration-form-input-container">
           <Label htmlFor='registration-name-input'>
             Name<Required />
@@ -57,8 +58,9 @@ class RegistrationForm extends Component {
             required
           />
         </div>
-        <div className={"registration-form-input-container" + (error && error.toLowerCase().contains('username') ? ' form-error' : '')}>
-          <Label htmlFor='registration-username-input'>
+        <div className="registration-form-input-container">
+          {usernameError && <div role='alert' className="form-error-popup">{error && <p>{error}</p>}</div>}
+          <Label htmlFor={'registration-username-input' + (usernameError ? ' form-error' : '')}>
             Username<Required />
           </Label>
           <Input className="registration-form-input"
@@ -68,10 +70,11 @@ class RegistrationForm extends Component {
           />
         </div>
         <div className="registration-form-input-container">
+          {passwordError && <div role='alert' className="form-error-popup">{error && <p>{error}</p>}</div>}
           <Label htmlFor='registration-password-input'>
             Password<Required />
           </Label>
-          <Input className="registration-form-input-last"
+          <Input className={"registration-form-input-last" + (passwordError ? ' form-error' : '')}
             id='registration-password-input'
             name='password'
             type='password'

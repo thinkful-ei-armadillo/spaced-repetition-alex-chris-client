@@ -44,13 +44,60 @@
   font-weight: 800;
   color: #7b7b7b;
   font-size: 16px; 
+  margin-bottom: 30px;
 }
 
 .registration-form-input-container{
   outline: none;
   position: relative;
+  display: flex;
+  align-items: center;
 }
 
+.form-error{
+  border-radius: 5px;
+  border: 3px solid #D7263D !important;
+}
+
+.form-error-popup, .main-form-error{
+  background-color: #D7263D;
+  color: white;
+  font-weight: 900;
+  font-size: 14px;
+  border-radius: 5px;
+  padding: 0 15px;
+}
+
+.form-error-popup{
+  position: absolute;
+  left: 105%;
+  min-width: 200px;
+}
+
+.main-form-error{
+  padding: 2px 15px;
+  margin-bottom: 15px;
+}
+
+.form-error-popup p, .main-form-error p {
+  margin: 10px 0;
+}
+
+.form-error-popup:after {
+  right: 100%;
+  top: 50%;
+  border: solid transparent;
+  content: ' ';
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: #D7263D00;
+  border-right-color: #D7263D;
+  border-width: 10px 8px 10px 0;
+  margin-top: -10px;
+}
+ 
 .registration-form-input-container label{
   position: absolute;
   cursor: pointer;
