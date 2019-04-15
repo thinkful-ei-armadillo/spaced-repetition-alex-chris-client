@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import LoginForm from '../../components/LoginForm/LoginForm'
 import { Link } from 'react-router-dom'
 
+//CSS styles are in RegistrationForm.css
+
 class LoginRoute extends Component {
   static defaultProps = {
     location: {},
@@ -19,15 +21,12 @@ class LoginRoute extends Component {
   render() {
     return (
       <section className="user-form-container">
-        <div className="user-form-top">
+        <div className="user-form-full">
           <h2 className="user-form-header">Login</h2>
           <LoginForm
             onLoginSuccess={this.handleLoginSuccess}
           />
         </div>
-        <footer className="user-form-bottom">
-          <p>Don't have an account? <Link className="sign-in-link" to='/register'>Sign Up</Link></p>
-        </footer>
       </section>
     );
   }

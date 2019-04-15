@@ -4,6 +4,8 @@ import AuthApiService from '../../services/auth-api-service'
 import UserContext from '../../contexts/UserContext'
 import Button from '../Button/Button'
 
+// CSS styles are in RegistrationForm.css
+
 class LoginForm extends Component {
   static defaultProps = {
     onLoginSuccess: () => { }
@@ -67,7 +69,7 @@ class LoginForm extends Component {
             Password
           </Label>
           <Input
-            className="user-form-input-last"
+            className="user-form-input"
             id='login-password-input'
             name='password'
             type='password'
