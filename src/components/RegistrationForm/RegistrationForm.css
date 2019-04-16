@@ -86,7 +86,7 @@
 .user-form-input-container label{
   margin: 10px 0;
   cursor: pointer;
-  display: flex;
+  display: inline-flex;
   height: 100%;
   align-items: center;
   font-weight: 800;
@@ -120,7 +120,7 @@
 
 
 @media only screen and (max-width: 760px){
-  .user-form-top, .user-form-bottom{
+  .user-form-top, .user-form-bottom, .user-form-full{
     border: none;
   }
 
