@@ -28,8 +28,7 @@ class DashboardRoute extends Component {
       return (!res.ok) ? res.json().then(e => Promise.reject(e))
       : res.json();  
     })
-    .then(resJson => {
-      console.log(resJson); 
+    .then(resJson => { 
       this.context.setLanguage(resJson); 
       this.setState({
         loading: null
