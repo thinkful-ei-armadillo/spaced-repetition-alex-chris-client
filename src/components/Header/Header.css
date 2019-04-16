@@ -1,4 +1,4 @@
-header{
+.main-header{
   background-color: #0197f6;
   margin-bottom: 50px; 
   padding:10px;
@@ -8,16 +8,25 @@ header{
   display: inline-block; 
 }
 
-.login-link, .register-link, .logout-link{
+.login-link, .register-link, .logout-link, .header-username{
   color: white; 
   text-decoration: none; 
   margin-left: 20px; 
   font-weight: 800;
   height: 100px;
+}
+
+.header-username{
+  font-size: 16px;
+}
+
+.login-link, .register-link, .logout-link{
   font-size: 18px;  
 }
 
-.login-link:hover, .register-link:hover, .logout-link:hover{
+
+.login-link:hover, .register-link:hover, .logout-link:hover,
+.login-link:focus, .register-link:focus, .logout-link:focus{
   border-bottom: 2px solid white;
 }
 

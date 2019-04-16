@@ -1,0 +1,140 @@
+.dashboard-container {
+  max-width: 1000px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+.dashboard-flag {
+  width: 48px;
+  display: inline;
+  margin-right: 10px;
+  padding: 1px;
+  border: 2px solid #ebebeb;
+}
+
+.dashboard-language-title{
+  display: inline-block;
+  font-size: 48px;
+  margin: 5px 0;
+}
+
+.dashboard-header{
+  border-bottom: 4px solid #ebebeb;
+  margin-bottom: 40px;
+}
+
+.dashboard-flex{
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.dashboard-wordslist-container, .dashboard-stats{
+  margin: 0 10px;
+}
+
+.dashboard-stats{
+  padding: 10px 30px 30px;
+  border-radius: 25px;
+  border: 3px solid #ebebeb;
+  height: 200px;
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  font-size: 16px;
+  font-weight: 800;
+  text-align: center;
+}
+
+.dashboard-stats p span {
+  display: block;
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+.dashboard-wordslist-container{
+  width: 100%;
+}
+
+.dashboard-wordslist-title{
+  font-size: 34px;
+  margin: 10px 0;
+}
+
+.dashboard-practice-button{
+  display: block;
+  width: 100%;
+}
+
+.dashboard-wordslist{
+  list-style: none;
+  padding: 0;
+  margin-bottom: 50px;
+}
+
+.dashboard-wordslist-word{
+  position: relative;
+  padding: 20px;
+}
+
+.word-completed:before {
+  content: '';
+  border-left: 4px solid rgb(9, 187, 33);
+  border-radius: 10px;
+  height: 60%;
+  width: 0;
+  position: absolute;
+  right: 100%;
+}
+
+.dashboard-wordslist-word:not(:first-child):after{
+  content: '';
+  border-top: 3px solid #ebebeb;
+  width: 90%;
+  height: 0;
+  left: 5%;
+  top: 0;
+  position: absolute;
+}
+
+.dashboard-wordslist-word h4{
+  font-size: 20px;
+  margin: 0;
+  text-transform: capitalize;
+}
+
+.dashboard-wordslist-word span{
+  display: block;
+  color: #7b7b7b;
+  font-size: 14px;
+  text-transform: capitalize;
+}
+
+.dashboard-wordslist-word{
+  margin: 0;
+}
+
+.dashboard-container {
+  -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 1s; /* Firefox < 16 */
+  -ms-animation: fadein 1s; /* Internet Explorer */
+  -o-animation: fadein 1s; /* Opera < 12.1 */
+  animation: fadein 1s;
+}
+
+@media only screen and (max-width: 760px) {
+  .dashboard-flex{
+    flex-direction: column;
+  }
+
+  .dashboard-stats{
+    width: 100%;
+    margin: 0;
+    margin-bottom: 20px;
+  }
+
+  .dashboard-wordslist-container {
+    margin: 0;
+  }
+}

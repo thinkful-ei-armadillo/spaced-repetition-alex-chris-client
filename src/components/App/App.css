@@ -1,3 +1,7 @@
+a.blue-button{
+  text-decoration: none;
+}
+
 .blue-button{
   background-color: #0197f6;
   border: none; 
@@ -12,7 +16,18 @@
   font-family: 'Nunito', sans-serif; 
 }
 
-.blue-button:hover {
+.blue-button:hover{
   cursor: pointer;
-  background-color: #2FA9F7;
+}
+
+.blue-button:hover, .blue-button:focus {
+  background-color: rgb(70, 184, 255);  
+}
+
+.fas{
+  margin-right: 10px;
+}
+
+.loading-text{
+  text-align: center;
 }

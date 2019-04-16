@@ -4,6 +4,8 @@ import TokenService from '../../services/token-service'
 import LanguageContext from '../../contexts/LanguageContext'
 import { Link } from 'react-router-dom'
 import IdleService from '../../services/idle-service'
+import WordsList from '../../components/WordsList/WordsList';
+import './DashboardRoute.css';
 
 class DashboardRoute extends Component {
 
@@ -49,36 +51,32 @@ class DashboardRoute extends Component {
     });
   }
 
-  renderWords = () => {
-    const words = this.context.words;
-    return words.map(word => {
-      return(
-        <li> 
-          <h4>{word.original}</h4>
-          <span>correct answer count: {word.correct_count}</span>
-          <span>incorrect answer count: {word.incorrect_count}</span>
-        </li>
-      )
-    })
-  }
-
   render() {
     if (this.state.loading){
       return(
-        <p>Loading...</p>
+        <section className="dashboard-container">
+          <h2 className="loading-text">Loading...</h2>
+        </section>
       )
     }
+    /* once other languages are added add the url to the DB and load from there */
+    const total_score = this.context.language.total_score;
+
     return (
-      <section>
-        <h2>{this.context.language.name}</h2>
-        <p>Total correct answers: {this.context.language.total_score}</p>
-        <Link to='/learn'>
-          Start practicing
-        </Link>
-        <h3>Words to practice</h3>
-        <ul>
-          {this.renderWords()}
-        </ul>
+      <section className="dashboard-container">
+        <header className="dashboard-header">
+          <img className="dashboard-flag" src="https://upload.wikimedia.org/wikipedia/commons/2/20/Flag_of_the_Netherlands.svg" alt="Netherlands flag"/>
+          <h2 className="dashboard-language-title">{this.context.language.name}</h2>
+        </header>
+        <div className="dashboard-flex">
+          <div className="dashboard-stats">
+            <p>Total correct answers: <span>{total_score ? total_score.toLocaleString() : 0}</span></p>
+            <Link to='/learn' className="blue-button dashboard-practice-button">
+              Start practicing
+            </Link>
+          </div>
+          <WordsList/>
+        </div>
       </section>
     );
   }

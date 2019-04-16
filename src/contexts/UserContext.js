@@ -73,7 +73,7 @@ export class UserProvider extends Component {
       this.fetchRefreshToken()
     })
   }
-
+  
   processLogout = () => {
     TokenService.clearAuthToken()
     TokenService.clearCallbackBeforeExpiry()

@@ -14,7 +14,8 @@ class Header extends Component {
   renderLogoutLink() {
     return (
       <div>
-        <span>
+        <span className="header-username">
+          <i className="fas fa-user"/>
           {this.context.user.name}
         </span>
         <nav className="header-navigation">
@@ -40,7 +41,7 @@ class Header extends Component {
 
   render() {
     return (
-      <header>
+      <header className="main-header">
         <div className="header-container" >
           <h1 className="header-title">
             <Link className="header-title-link" to='/'>
