@@ -3,7 +3,6 @@ import Config from '../../config';
 import TokenService from '../../services/token-service'
 import LanguageContext from '../../contexts/LanguageContext'
 import { Link } from 'react-router-dom'
-import IdleService from '../../services/idle-service'
 import WordsList from '../../components/WordsList/WordsList';
 import './DashboardRoute.css';
 
@@ -36,11 +35,7 @@ class DashboardRoute extends Component {
     })
     .catch(err => { 
       if (err.error && err.error === 'Unauthorized request'){
-        TokenService.clearAuthToken();
-        TokenService.clearCallbackBeforeExpiry();
-        IdleService.unRegisterIdleResets();
-        //Avoids conflicts with clearing user context; 
-        window.location.replace('/login'); 
+        this.props.logOut(); 
       }
       else{
         this.setState({

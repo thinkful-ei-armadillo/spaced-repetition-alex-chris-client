@@ -6,9 +6,13 @@ class LearningRoute extends Component {
 
   state = {
     word: '',
+    nextWord: '', 
     totalScore: null,
     correctCount: null,
-    incorrectCount: null 
+    incorrectCount: null,
+    answer: null,
+    isCorrect: null,
+    guess:""
   }
 
   componentDidMount() {
@@ -25,7 +29,7 @@ class LearningRoute extends Component {
     })
     .then(resJson => {
       this.setState({
-        word: resJson.word,
+        word: resJson.nextWord,
         totalScore: resJson.totalScore,
         correctCount: resJson.wordCorrectCount,
         incorrectCount: resJson.wordIncorrectCount
@@ -36,13 +40,55 @@ class LearningRoute extends Component {
     })
   }
 
+  postGuess = (e) =>{
+    e.preventDefault();
+    const guess = e.target["learn-guess-input"].value; 
+    fetch(`${Config.API_ENDPOINT}/language/guess`, {
+      headers: {
+        'Authorization': `bearer ${TokenService.getAuthToken()}`, 
+      },
+      method: "POST",
+      body: JSON.stringify({guess})
+    })
+    .then(res => {
+      return (!res.ok) ? res.json().then(e => Promise.reject(e))
+      : res.json()
+    })
+    .then(resJson =>{
+      this.setState({
+        nextWord: resJson.nextWord,
+        totalScore: resJson.totalScore,
+        correctCount: resJson.wordCorrectCount,
+        incorrectCount: resJson.wordIncorrectCount,
+        answer: resJson.answer,
+        isCorrect: resJson.isCorrect,
+        guess
+      })
+    }) 
+    
+  }
+
   render() {
+    if (this.state.isCorrect !== null) {
+      return(
+        <section>
+          <div className="DisplayScore">
+            <p>Your total score is: {this.state.totalScore}</p>
+          </div>
+          <h2>{this.state.isCorrect ? "You were correct! :D" : "Good try, but not quite right :("}</h2>
+          <div className="DisplayFeedback">
+            <p >The correct translation for {this.state.word} was {this.state.answer} and you chose {this.state.guess}!</p>
+          </div>
+          <button>Try another word!</button>
+        </section>
+      )
+    }
     return (
       <section>
         <h2>Translate the word:</h2>
         <span>{this.state.word}</span>
-        <p>Your total score is: {this.state.totalScore}</p>
-        <form>
+        <p className="DisplayScore">Your total score is: {this.state.totalScore}</p>
+        <form onSubmit={this.postGuess}>
           <label htmlFor="learn-guess-input">
             What's the translation for this word?
           </label>
