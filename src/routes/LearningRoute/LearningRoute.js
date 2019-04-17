@@ -12,7 +12,7 @@ class LearningRoute extends Component {
     incorrectCount: null,
     answer: null,
     isCorrect: null,
-    guess:""
+    guess:''
   }
 
   componentDidMount() {
@@ -45,7 +45,8 @@ class LearningRoute extends Component {
     const guess = e.target["learn-guess-input"].value; 
     fetch(`${Config.API_ENDPOINT}/language/guess`, {
       headers: {
-        'Authorization': `bearer ${TokenService.getAuthToken()}`, 
+        'Authorization': `bearer ${TokenService.getAuthToken()}`,
+        "content-type": "application/json"
       },
       method: "POST",
       body: JSON.stringify({guess})
@@ -65,7 +66,17 @@ class LearningRoute extends Component {
         guess
       })
     }) 
-    
+  }
+
+  nextWord = (e) => {
+    e.preventDefault();
+    this.setState({
+      word: this.state.nextWord,
+      nextWord: '', 
+      answer: null,
+      isCorrect: null,
+      guess:''
+    });
   }
 
   render() {
@@ -79,7 +90,7 @@ class LearningRoute extends Component {
           <div className="DisplayFeedback">
             <p >The correct translation for {this.state.word} was {this.state.answer} and you chose {this.state.guess}!</p>
           </div>
-          <button>Try another word!</button>
+          <button onClick={this.nextWord}>Try another word!</button>
         </section>
       )
     }
@@ -92,7 +103,7 @@ class LearningRoute extends Component {
           <label htmlFor="learn-guess-input">
             What's the translation for this word?
           </label>
-          <input type="text" id="learn-guess-input" required/>
+          <input type="text" id="learn-guess-input" autoComplete="off" required/>
           <button type="submit">Submit your answer</button>
         </form>
         <p>You have answered this word correctly {this.state.correctCount} times.</p>
