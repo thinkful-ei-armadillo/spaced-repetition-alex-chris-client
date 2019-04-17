@@ -25,7 +25,7 @@ class LearningRoute extends Component {
     })
     .then(resJson => {
       this.setState({
-        word: resJson.nextWord,
+        word: resJson.word,
         totalScore: resJson.totalScore,
         correctCount: resJson.wordCorrectCount,
         incorrectCount: resJson.wordIncorrectCount
