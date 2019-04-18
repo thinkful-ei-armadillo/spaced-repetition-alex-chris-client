@@ -74,6 +74,8 @@ export class QuestionProvider extends Component {
   render() {
     const value = {
       ...this.state,
+      setError: this.setError,
+      clearError: this.clearError,
       setCurrentWord: this.setCurrentWord,
       setNextWord: this.setNextWord,
       goToNextWord: this.goToNextWord

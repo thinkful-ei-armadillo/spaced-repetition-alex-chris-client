@@ -5,6 +5,8 @@ import LanguageContext from '../../contexts/LanguageContext'
 import { Link } from 'react-router-dom'
 import WordsList from '../../components/WordsList/WordsList';
 import './DashboardRoute.css';
+import LoadingPage from '../../components/LoadingPage/LoadingPage';
+import ErrorPage from '../../components/ErrorPage/ErrorPage';
 
 class DashboardRoute extends Component {
 
@@ -46,11 +48,12 @@ class DashboardRoute extends Component {
   }
 
   render() {
+    if (this.state.error) {
+      return <ErrorPage error={this.state.error}/>
+    }
     if (this.state.loading){
       return(
-        <section className="dashboard-container">
-          <h2 className="loading-text">Loading...</h2>
-        </section>
+        <LoadingPage/>
       )
     }
     /* once other languages are added add the url to the DB and load from there */

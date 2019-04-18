@@ -26,11 +26,6 @@
   margin: 100px 0 40px;
 }
 
-.question-button{
-  width: 80%;
-  align-self: center;
-}
-
 .question-word-container{
   display: flex;
   /* justify-content: center; */
@@ -78,17 +73,51 @@
 .question-footer-subcontainer{
   max-width: 1000px;
   margin: 0 auto; 
+  text-align: center; 
 }
 
 .question-total-score{
-  text-align: center; 
   font-weight: 900; 
   font-size: 24px; 
   margin-bottom: 0px;
   color: #0197f6
 }
 
-.question-correct-score, .question-incorrect-score{
+.question-score{
   color: #767676;
   margin: 5px; 
+}
+
+@media only screen and (max-width: 760px) {
+  .question-container{
+    position: static;
+  }
+
+  .question-form-container{
+    padding: 0 20px;
+  }
+
+  .question-title{
+    font-size: 28px;
+  }
+
+  .question-word{
+    font-size: 20px;
+  }
+
+  .question-form{
+    margin: 50px 0 40px;
+  }
+  
+  .question-total-score{
+    font-size: 20px;
+  }
+
+  .question-score{
+    font-size: 14px;
+  }
+
+  .question-input{
+    font-size: 24px;
+  }
 }

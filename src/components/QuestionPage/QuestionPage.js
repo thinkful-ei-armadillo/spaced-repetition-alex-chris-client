@@ -49,14 +49,14 @@ class QuestionPage extends Component {
               What's the translation for this word?
             </label>
             <Input type="text" id="learn-guess-input" autoComplete="off" required className="question-input"/>
-            <button type="submit" className="blue-button question-button">Submit your answer</button>
+            <button type="submit" className="blue-button learning-route-button">Submit your answer</button>
           </form>
         </div>
         <footer className="question-footer">
           <div className="question-footer-subcontainer">
             <p className="question-total-score">Your total score is: {this.context.totalScore}</p>
-            <p className="question-correct-score">You have answered this word correctly {this.context.correctCount} times.</p>
-            <p className="question-incorrect-score">You have answered this word incorrectly {this.context.incorrectCount} times.</p>
+            <p className="question-score">You have answered this word correctly {this.context.correctCount} times.</p>
+            <p className="question-score">You have answered this word incorrectly {this.context.incorrectCount} times.</p>
           </div>
         </footer>
       </section>

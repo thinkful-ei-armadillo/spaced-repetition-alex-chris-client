@@ -50,7 +50,6 @@
 .header-title{
   margin: 0;
   display: inline-block;
-  height: 46px;
 }
 
 .header-title-link:focus, .header-title-link:hover{
@@ -70,4 +69,11 @@
     display: block;  
   }
 
+  .header-title-link{
+    font-size: 30px;
+  }
+
+  .header-title{
+    margin-bottom: 10px;
+  }
 }

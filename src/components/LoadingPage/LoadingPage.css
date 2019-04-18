@@ -1,0 +1,66 @@
+.loading-page{
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.loading-animated-dark, .loading-animated-light{
+  position: absolute;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+}
+
+
+.loading-animated-dark{
+  animation: loading-animation 3s linear infinite;
+  background-color: #1a53bb;
+}
+
+.loading-animated-light{
+  animation: loading-animation-light 3s linear infinite;
+  background-color: #0197f6;
+}
+
+@keyframes loading-animation {
+  0% {
+    opacity: 0;
+    transform: rotate(0deg);
+    left: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(360deg);
+    left: 100%;
+    opacity: 0;
+  }
+}
+
+@keyframes loading-animation-light {
+  0% {
+    opacity: 0;
+    transform: rotate(90deg);
+    left: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(360deg);
+    left: 100%;
+    opacity: 0;
+  }
+}

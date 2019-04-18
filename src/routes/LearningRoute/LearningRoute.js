@@ -4,7 +4,9 @@ import Config from '../../config'
 import QuestionContext from '../../contexts/QuestionContext';
 import QuestionPage from '../../components/QuestionPage/QuestionPage';
 import AnswerPage from '../../components/AnswerPage/AnswerPage';
-import './LearningRoute.css'
+import LoadingPage from '../../components/LoadingPage/LoadingPage';
+import ErrorPage from '../../components/ErrorPage/ErrorPage';
+import './LearningRoute.css';
 
 class LearningRoute extends Component {
   static contextType = QuestionContext;
@@ -30,7 +32,7 @@ class LearningRoute extends Component {
       );
     })
     .catch(err => {
-      console.log(err); 
+      this.context.setError(err);
     })
   }
 
@@ -46,8 +48,11 @@ class LearningRoute extends Component {
   }
 
   render() {
+    if (this.context.error) {
+      return <ErrorPage error={this.context.error}/>;
+    }
     if (this.context.loading) {
-      return <section></section>; //replace with loading screen
+      return <LoadingPage/>;
     }
     if (this.context.isCorrect !== null) {
       return(
