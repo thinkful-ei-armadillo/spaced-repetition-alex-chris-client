@@ -1,15 +1,27 @@
 {
-  "short_name": "SpacedRep",
-  "name": "Spaced Repetition | AC",
-  "icons": [
+"version": 2,
+"name": "ac-spaced-repetition",
+"alias": "ac-spaced-repetition",
+"routes": [
     {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "src": "^/static/(.*)",
+      "dest": "/static/$1"
+    },
+    {
+      "src": "^/favicon.ico$",
+      "dest": "/favicon.ico"
+    },
+    {
+      "src": "^/manifest.json$",
+      "dest": "/manifest.json"
+    },
+    {
+      "src": "^/site.webmanifest.json$",
+      "dest": "/site.webmanifest.json"
+    },
+    {
+      "src": ".*",
+      "dest": "/index.html"
     }
-  ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
- }
+  ]
+}
