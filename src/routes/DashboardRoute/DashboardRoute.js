@@ -57,9 +57,9 @@ class DashboardRoute extends Component {
     const total_score = this.context.language.total_score;
 
     return (
-      <section className="dashboard-container">
+      <section className="dashboard-container container fade-in">
         <header className="dashboard-header">
-          <img className="dashboard-flag" src="https://upload.wikimedia.org/wikipedia/commons/2/20/Flag_of_the_Netherlands.svg" alt="Netherlands flag"/>
+          <img className="dashboard-flag" src="https://upload.wikimedia.org/wikipedia/commons/2/20/Flag_of_the_Netherlands.svg" alt=""/>
           <h2 className="dashboard-language-title">{this.context.language.name}</h2>
         </header>
         <div className="dashboard-flex">
