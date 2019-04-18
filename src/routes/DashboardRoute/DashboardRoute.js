@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom'
 import WordsList from '../../components/WordsList/WordsList';
 import './DashboardRoute.css';
 import LoadingPage from '../../components/LoadingPage/LoadingPage';
-import ErrorPage from '../../components/ErrorPage/ErrorPage';
 
 class DashboardRoute extends Component {
 
@@ -37,7 +36,8 @@ class DashboardRoute extends Component {
     })
     .catch(err => { 
       if (err.error && err.error === 'Unauthorized request'){
-        this.props.logOut(); 
+        this.props.logOut();
+        this.props.history.push('/login'); 
       }
       else{
         this.setState({
@@ -48,9 +48,6 @@ class DashboardRoute extends Component {
   }
 
   render() {
-    if (this.state.error) {
-      return <ErrorPage error={this.state.error}/>
-    }
     if (this.state.loading){
       return(
         <LoadingPage/>

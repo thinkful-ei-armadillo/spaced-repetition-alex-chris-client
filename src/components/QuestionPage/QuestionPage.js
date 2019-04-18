@@ -8,6 +8,12 @@ import './QuestionPage.css';
 class QuestionPage extends Component {
   static contextType = QuestionContext;
 
+  guessInput = React.createRef(); 
+
+  componentDidMount(){
+    this.guessInput.current.focus(); 
+  }
+
   postGuess = (e) =>{
     e.preventDefault();
     const guess = e.target["learn-guess-input"].value.trim(); 
@@ -46,7 +52,7 @@ class QuestionPage extends Component {
             <label htmlFor="learn-guess-input" className="question-form-label">
               What's the translation for this word?
             </label>
-            <Input type="text" id="learn-guess-input" autoComplete="off" required className="question-input"/>
+            <Input ref={this.guessInput} type="text" id="learn-guess-input" autoComplete="off" required className="question-input"/>
             <button type="submit" className="blue-button learning-route-button">Submit your answer</button>
           </form>
         </div>

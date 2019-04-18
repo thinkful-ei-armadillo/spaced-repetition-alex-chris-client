@@ -5,7 +5,6 @@ import QuestionContext from '../../contexts/QuestionContext';
 import QuestionPage from '../../components/QuestionPage/QuestionPage';
 import AnswerPage from '../../components/AnswerPage/AnswerPage';
 import LoadingPage from '../../components/LoadingPage/LoadingPage';
-import ErrorPage from '../../components/ErrorPage/ErrorPage';
 import './LearningRoute.css';
 
 class LearningRoute extends Component {
@@ -32,7 +31,13 @@ class LearningRoute extends Component {
       );
     })
     .catch(err => {
+      if (err.error && err.error === 'Unauthorized request') {
+        this.props.logOut();
+        this.props.history.push('/login'); 
+      }
+      else{
       this.context.setError(err);
+      }
     })
   }
 
@@ -48,9 +53,6 @@ class LearningRoute extends Component {
   }
 
   render() {
-    if (this.context.error) {
-      return <ErrorPage error={this.context.error}/>;
-    }
     if (this.context.loading) {
       return <LoadingPage/>;
     }

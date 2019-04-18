@@ -5,6 +5,8 @@ import './AnswerPage.css';
 class AnswerPage extends Component {
   static contextType = QuestionContext;
 
+  buttonRef = React.createRef();
+
   nextWord = (e) => {
     e.preventDefault();
     this.context.goToNextWord(
@@ -14,6 +16,10 @@ class AnswerPage extends Component {
       null, //isCorrect
       '' //guess
     );
+  }
+
+  componentDidMount() {
+    this.buttonRef.current.focus(); 
   }
 
   render() {
@@ -29,7 +35,7 @@ class AnswerPage extends Component {
           <div className="DisplayFeedback">
             <p >The correct translation for {this.context.word} was {this.context.answer} and you chose {this.context.guess}!</p>
           </div>
-          <button className="blue-button learning-route-button" onClick={this.nextWord}>Try another word!</button>
+          <button ref={this.buttonRef} className="blue-button learning-route-button" onClick={this.nextWord}>Try another word!</button>
         </div>
       </section>
     );
