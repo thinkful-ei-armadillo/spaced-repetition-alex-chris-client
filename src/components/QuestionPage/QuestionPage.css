@@ -71,9 +71,23 @@
   border-top: 4px solid #ebebeb;
   background-color: #f7f7f7;
   min-height: 150px;
+  display: flex; 
+  justify-content: center; 
 }
 
 .question-footer-subcontainer{
   max-width: 1000px;
-  margin: 0 auto;
+  margin: 0 auto; 
+}
+
+.question-total-score{
+  font-weight: 900; 
+  font-size: 24px; 
+  margin-bottom: 0px;
+  color: #0197f6
+}
+
+.question-correct-score, .question-incorrect-score{
+  color: #767676;
+  margin: 5px; 
 }

@@ -54,9 +54,9 @@ class QuestionPage extends Component {
         </div>
         <footer className="question-footer">
           <div className="question-footer-subcontainer">
-            <p>Your total score is: {this.context.totalScore}</p>
-            <p>You have answered this word correctly {this.context.correctCount} times.</p>
-            <p>You have answered this word incorrectly {this.context.incorrectCount} times.</p>
+            <p className="question-total-score">Your total score is: {this.context.totalScore}</p>
+            <p className="question-correct-score">You have answered this word correctly {this.context.correctCount} times.</p>
+            <p className="question-incorrect-score">You have answered this word incorrectly {this.context.incorrectCount} times.</p>
           </div>
         </footer>
       </section>
