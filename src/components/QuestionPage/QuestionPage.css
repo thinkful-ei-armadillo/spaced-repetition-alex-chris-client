@@ -81,6 +81,7 @@
 }
 
 .question-total-score{
+  text-align: center; 
   font-weight: 900; 
   font-size: 24px; 
   margin-bottom: 0px;
