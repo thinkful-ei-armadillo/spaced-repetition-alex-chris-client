@@ -1,0 +1,15 @@
+{
+  "name": "Spaced Repetition",
+  "short_name": "SpacedRep",
+  "icons": [
+      {
+          "src": "/icons/android-chrome-48x48.png",
+          "sizes": "48x48",
+          "type": "image/png"
+      }
+  ],
+  "start_url": ".",
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
+  "display": "standalone"
+}

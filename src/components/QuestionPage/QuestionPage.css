@@ -26,12 +26,6 @@
   margin: 100px 0 40px;
 }
 
-.question-word-container{
-  display: flex;
-  /* justify-content: center; */
-  padding-left: 5px;
-}
-
 .question-word{
   text-transform: capitalize;
   font-size: 24px;
@@ -89,14 +83,6 @@
 }
 
 @media only screen and (max-width: 760px) {
-  .question-container{
-    position: static;
-  }
-
-  .question-form-container{
-    padding: 0 20px;
-  }
-
   .question-title{
     font-size: 28px;
   }
@@ -119,5 +105,15 @@
 
   .question-input{
     font-size: 24px;
+  }
+}
+
+@media only screen and (max-width: 760px), (max-height: 700px){
+  .question-container{
+    position: static;
+  }
+
+  .question-form-container{
+    padding: 0 20px;
   }
 }

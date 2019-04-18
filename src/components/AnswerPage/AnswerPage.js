@@ -23,7 +23,7 @@ class AnswerPage extends Component {
           <div className="DisplayScore">
             <p>Your total score is: {this.context.totalScore}</p>
           </div>
-          <h2 className="answer-correct">
+          <h2 className="answer-correct" aria-live="polite">
             {this.context.isCorrect ? "You were correct! :D" : "Good try, but not quite right :("}
           </h2>
           <div className="DisplayFeedback">

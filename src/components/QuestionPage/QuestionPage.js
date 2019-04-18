@@ -41,9 +41,7 @@ class QuestionPage extends Component {
       <section className="question-container fade-in">
         <div className="question-form-container">
           <h2 className="question-title">Translate the word:</h2>
-          <div className="question-word-container">
-            <span className="question-word">{this.context.word}</span>
-          </div>
+          <span aria-live="polite" className="question-word">{this.context.word}</span>
           <form onSubmit={this.postGuess} className="question-form">
             <label htmlFor="learn-guess-input" className="question-form-label">
               What's the translation for this word?

@@ -41,7 +41,7 @@ class Header extends Component {
 
   render() {
     return (
-      <header className="main-header">
+      <header role="banner" className="main-header">
         <div className="header-container" >
           <h1 className="header-title">
             <Link className="header-title-link" to='/'>
