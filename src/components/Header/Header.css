@@ -49,7 +49,12 @@
 
 .header-title{
   margin: 0;
-  display: inline-block; 
+  display: inline-block;
+  height: 46px;
+}
+
+.header-title-link:focus, .header-title-link:hover{
+  border-bottom: 3px solid white;
 }
 
 @media only screen and (max-width: 760px){

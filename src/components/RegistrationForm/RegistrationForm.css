@@ -10,7 +10,7 @@
 }
 
 .user-form-bottom{
-  background-color: #f1f1f1;
+  background-color: #f7f7f7;
   border-bottom-left-radius: 25px;
   border-bottom-right-radius: 25px; 
   border-top: none; 
@@ -49,7 +49,7 @@
 
 .user-form-subtitle{
   font-weight: 800;
-  color: #7b7b7b;
+  color: #767676;
   font-size: 16px; 
   margin-bottom: 30px;
 }
